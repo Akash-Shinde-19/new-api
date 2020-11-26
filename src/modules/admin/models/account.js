@@ -13,7 +13,7 @@ import sgMail from '@sendgrid/mail';
 import { uploadToS3 } from '../utils/S3Service';
 import { Product } from './product';
 import {Lookup} from './lookup';
-const AccountSchema: Schema<any> = new Schema(
+export const AccountSchema: Schema<any> = new Schema(
   {
     userId: {
       type: String,
