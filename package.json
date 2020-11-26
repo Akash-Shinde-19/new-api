@@ -1,0 +1,82 @@
+{
+  "name": "see-city-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "nodemonConfig": {
+    "exec": "npm run dev",
+    "watch": [
+      "src/*",
+      "public/*"
+    ],
+    "ignore": [
+      "**/__tests__/**",
+      "*.test.js",
+      "*.spec.js"
+    ]
+  },
+  "scripts": {
+    "bundle": "babel ./src --out-dir functions/bundle",
+    "start": "node index.js",
+    "build": "npm-run-all clean transpile",
+    "server": "node ./dist",
+    "dev": "NODE_ENV=development  babel ./src -d lib && npm-run-all build server",
+    "transpile": "babel ./src --out-dir dist",
+    "clean": "rimraf dist",
+    "watch:dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/seecity/api-poc.git"
+  },
+  "author": "Greg Donovan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/seecity/see-city-api/issues"
+  },
+  "homepage": "https://gitlab.com/seecity/see-city-api#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^7.2.1",
+    "apollo-server": "^2.10.1",
+    "apollo-server-express": "^2.14.3",
+    "apollo-server-lambda": "^2.10.1",
+    "apollo-upload-server": "^7.1.0",
+    "aws-sdk": "^2.726.0",
+    "co": "^4.6.0",
+    "cors": "^2.8.5",
+    "cpx": "^1.5.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "graphql": "^15.1.0",
+    "graphql-compose": "^7.18.1",
+    "graphql-compose-mongoose": "^7.3.8",
+    "graphql-iso-date": "^3.6.1",
+    "graphql-upload": "^11.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.11",
+    "shortid": "^2.2.15"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-flow": "^7.10.1",
+    "apollo-server": "^2.10.1",
+    "apollo-server-lambda": "^2.10.1",
+    "cpx": "^1.5.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "flow-bin": "^0.127.0",
+    "nodemon": "^2.0.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2"
+  }
+}
