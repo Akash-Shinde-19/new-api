@@ -1,9 +1,13 @@
 import * as AWS from "aws-sdk";
 import * as fs from "fs";
 
-const BUCKET_NAME = "seecity";
-const IAM_USER_KEY = "AKIAJXWAMFKQB7ZRIZQQ";
-const IAM_USER_SECRET = "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";
+// const BUCKET_NAME = "seecity";
+// const IAM_USER_KEY = "AKIAJXWAMFKQB7ZRIZQQ";
+// const IAM_USER_SECRET = "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";
+
+const BUCKET_NAME = process.env.BUCKET_NAME;
+const IAM_USER_KEY = process.env.IAM_USER_KEY;
+const IAM_USER_SECRET = process.env.IAM_USER_SECRET;
 
 const s3bucket = new AWS.S3({
     accessKeyId: IAM_USER_KEY,
